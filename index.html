@@ -1,7 +1,26 @@
 
 <html>
     <head>
-        <title>4 Seasons</title>
+        <!-- Primary Meta Tags -->
+<title>4 Season </title>
+<meta name="title" content="4 season " />
+<meta name="description" content="4 Seasons Preschool and Hostel " />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.facebook.com/4seasonspreschoolandhostel/" />
+<meta property="og:title" content="4 Season " />
+<meta property="og:description" content="4 Seasons Preschool and Hostel " />
+<meta property="og:image" content="logo.webp" />
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+
         <link rel="stylesheet" href="main.css" type="text/css" />
         <script type="text/javascript" src="Winwheel.min.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
@@ -169,7 +188,26 @@
             function alertPrize(indicatedSegment)
             {
                 // Do basic alert of the segment text. You would probably want to do something more interesting with this information.
-                alert(indicatedSegment.text + ' says Hi');
+                //alert(indicatedSegment.text + ' says Hi');
+                //Try me!
+Swal.fire({
+  title: "You won a " + indicatedSegment.text + "!",
+  icon: "success",
+  showClass: {
+    popup: `
+      animate__animated
+      animate__fadeInUp
+      animate__faster
+    `
+  },
+  hideClass: {
+    popup: `
+      animate__animated
+      animate__fadeOutDown
+      animate__faster
+    `
+  }
+});
             }
         </script>
     </body>
