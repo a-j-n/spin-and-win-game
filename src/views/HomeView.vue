@@ -78,9 +78,6 @@
 </template>
 <style>
 main{
-  place-items: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
 }
 </style>
