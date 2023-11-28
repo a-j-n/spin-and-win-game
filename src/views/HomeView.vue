@@ -51,7 +51,7 @@
 </script>
 
 <template>
-  <main>
+  <main class="d-flex justify-content-between">
     <div>
       <roulette class=""
     :size="400" 
@@ -84,25 +84,11 @@
       <h1>Result</h1>
       <h2>{{res.name}}</h2>
       <span v-html="res.htmlContent"></span>
-      <button @click="reset" type="button" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Reset</button>
+      <button @click="reset" type="button" class="btn btn-success">Reset</button>
     </div>
   </div>
   </main>
 </template>
 <style>
-main{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-main > div{
-  margin: 0 3%;
-}
-.res{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
+
 </style>
