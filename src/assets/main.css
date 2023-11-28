@@ -25,6 +25,8 @@ a,
   body {
     display: flex;
     place-items: center;
+    justify-content: center;
+    align-items: center;
   }
 
   #app {
@@ -32,4 +34,30 @@ a,
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
+}
+@media (min-width: 1424px) {
+  body {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+}
+body {
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 2rem;
 }

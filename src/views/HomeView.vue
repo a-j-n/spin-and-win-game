@@ -34,7 +34,6 @@
       },
       wheelEndedCallback (item) {
       console.log(item);   
-
         //wheel.value.reset();
       }
     },
@@ -51,7 +50,7 @@
 
 <template>
   <main>
-    <roulette id="wheel"
+    <roulette class="xwheel"
     :size="500" 
     :base-display="true"
     :base-display-indicator="true" 
@@ -86,7 +85,7 @@ main{
   align-items: center;
 
 }
-#wheel{
+.xwheel{
   margin: auto;
 }
 </style>
