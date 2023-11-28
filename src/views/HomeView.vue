@@ -44,9 +44,6 @@
       },
       wheelStartedCallback(){
         console.log('wheel started');
-        setTimeout(() => {
-          // this.$refs.wheel.reset();
-        }, 5000);
       },
     },
     mounted(){
