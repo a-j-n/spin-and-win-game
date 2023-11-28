@@ -3,7 +3,7 @@ module.exports = {
     {
       name: 'Spin',
       port: 3005,
-      script: '/bin/yarn start',
+      script: '/bin/yarn dev',
       // cwd: '/home/user/your-nuxt-project/app1',
       env: {
         NODE_ENV: 'development'
