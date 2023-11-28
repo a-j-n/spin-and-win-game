@@ -52,7 +52,7 @@
 
 <template>
   <div class="d-flex justify-content-center mt-5">
-    <div class="mt-2">
+    <div class="">
       <roulette class=""
     :size="500" 
     :base-display="true"
