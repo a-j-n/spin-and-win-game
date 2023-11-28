@@ -34,6 +34,7 @@
       },
       wheelEndedCallback (item) {
       console.log(item);   
+
         //wheel.value.reset();
       }
     },
@@ -49,7 +50,7 @@
 </script>
 
 <template>
-  <div>
+  <main>
     <roulette 
     :size="500" 
     :base-display="true"
@@ -74,5 +75,13 @@
       </strong>
     </template>
   </roulette>
-  </div>
+  </main>
 </template>
+<style>
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+</style>
