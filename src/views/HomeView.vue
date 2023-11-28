@@ -51,8 +51,8 @@
 </script>
 
 <template>
-  <div class="d-flex justify-content-center">
-    <div>
+  <div class="d-flex justify-content-center mt-5">
+    <div class="mt-2">
       <roulette class=""
     :size="400" 
     :base-display="true"
