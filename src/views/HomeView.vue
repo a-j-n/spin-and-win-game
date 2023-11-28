@@ -51,7 +51,7 @@
 </script>
 
 <template>
-  <main class="d-flex justify-content-between">
+  <div class="d-flex justify-content-center">
     <div>
       <roulette class=""
     :size="400" 
@@ -78,16 +78,7 @@
     </template>
   </roulette>
     </div>
-  
-  <div>
-    <div class="res" v-if="res"> 
-      <h1>Result</h1>
-      <h2>{{res.name}}</h2>
-      <span v-html="res.htmlContent"></span>
-      <button @click="reset" type="button" class="btn btn-success">Reset</button>
-    </div>
   </div>
-  </main>
 </template>
 <style>
 
