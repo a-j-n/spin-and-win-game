@@ -18,6 +18,7 @@
     },
     data(){
       return{
+        res:false,
       duration:5,
       items:[],
       images : [
@@ -34,6 +35,7 @@
       },
       wheelEndedCallback (item) {
       console.log(item);   
+      this.res = item;
         //wheel.value.reset();
       }
     },
@@ -50,7 +52,8 @@
 
 <template>
   <main>
-    <roulette class=""
+    <div>
+      <roulette class=""
     :size="400" 
     :base-display="true"
     :base-display-indicator="true" 
@@ -74,10 +77,32 @@
       </strong>
     </template>
   </roulette>
+    </div>
+  
+  <div>
+    <div class="res" v-if="res"> 
+      <h1>Result</h1>
+      <h2>{{res.name}}</h2>
+      <span v-html="res.htmlContent"></span>
+      <button @click="reset" type="button" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Reset</button>
+    </div>
+  </div>
   </main>
 </template>
 <style>
 main{
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+main > div{
+  margin: 0 3%;
+}
+.res{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 </style>
