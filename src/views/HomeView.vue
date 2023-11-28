@@ -50,8 +50,8 @@
 
 <template>
   <main>
-    <roulette class="xwheel"
-    :size="500" 
+    <roulette class=""
+    :size="400" 
     :base-display="true"
     :base-display-indicator="true" 
     :base-size="100"
@@ -78,14 +78,9 @@
 </template>
 <style>
 main{
-  display: flex;
   place-items: center;
   display: flex;
   justify-content: center;
   align-items: center;
-
-}
-.xwheel{
-  margin: auto;
 }
 </style>
