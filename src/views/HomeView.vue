@@ -92,7 +92,7 @@
   </div>
 
   <div v-if="res" class="d-flex justify-content-center mt-3">
-    <div class="">
+    <div class="card">
       <h2 v-if="res">You won {{res.name}} <span v-html="res.htmlContent"></span></h2>
       <button @click="reset" class="btn btn-primary">Reset</button>
   </div>
