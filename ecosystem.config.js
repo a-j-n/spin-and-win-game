@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'TTB',
+      name: 'Spin',
       port: 3005,
       script: '/bin/yarn start',
       // cwd: '/home/user/your-nuxt-project/app1',
