@@ -37,7 +37,17 @@
       console.log(item);   
       this.res = item;
         //wheel.value.reset();
-      }
+      },
+      reset(){
+        this.res = false;
+        this.$refs.wheel.reset();
+      },
+      wheelStartedCallback(){
+        console.log('wheel started');
+        setTimeout(() => {
+          this.$refs.wheel.reset();
+        }, 5000);
+      },
     },
     mounted(){
       this.images.forEach((element,index) => {
@@ -51,6 +61,7 @@
 </script>
 
 <template>
+  <div class="container">
   <div class="d-flex justify-content-center mt-5">
     <div class="">
       <roulette class=""
@@ -60,16 +71,19 @@
     :base-size="100"
     :horizontal-content="false"
     :centered-indicator="true"
+
     :indicator-size="100"
     :indicator-position="'top'"
     :display-indicator="true"
     :display-shadow="true"
     :easing="'bounce'"
+
     :duration="duration" 
     ref="wheel"
     :items="items"
     @click="launchWheel" 
     @wheel-end="wheelEndedCallback"
+    @wheel-start="wheelStartedCallback"
     >
     <template #baseContent>
       <strong>
@@ -78,6 +92,14 @@
     </template>
   </roulette>
     </div>
+  </div>
+
+  <div v-if="res" class="d-flex justify-content-center mt-3">
+    <div class="">
+      <h2 v-if="res">You won {{res.name}} <span v-html="res.htmlContent"></span></h2>
+      <button @click="reset" class="btn btn-primary">Reset</button>
+  </div>
+</div>
   </div>
 </template>
 <style>
