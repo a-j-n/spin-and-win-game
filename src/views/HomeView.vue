@@ -51,7 +51,7 @@
 
 <template>
   <main>
-    <roulette 
+    <roulette id="wheel"
     :size="500" 
     :base-display="true"
     :base-display-indicator="true" 
@@ -85,5 +85,8 @@ main{
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+#wheel{
+  margin: auto;
 }
 </style>
