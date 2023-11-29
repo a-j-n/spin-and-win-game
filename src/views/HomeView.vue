@@ -30,15 +30,15 @@
       }  
     },
     methods:{
-      launchWheel (){
+       launchWheel ($event){
+        console.log('lunch',$event);
         this.$refs.wheel.launchWheel();
       },
       wheelEndedCallback (item) {
-      console.log(item);   
-      this.res = item;
-        //wheel.value.reset();
+        console.log(item);   
+        this.res = item;
       },
-      reset(){
+       reset(){
         this.res = false;
         this.$refs.wheel.reset();
       },
@@ -58,46 +58,52 @@
 </script>
 
 <template>
+  
   <div class="container">
+    <slot>
+    <div class="d-flex justify-content-center">
+      <img height="180" class="mx-auto " src="logo-horizntal.webp" />
+    </div>
   <div class="d-flex justify-content-center mt-5">
     <div class="">
       <roulette class=""
-    :size="500" 
+    :size="450" 
     :base-display="true"
+    :first-item-index="{value:0}"
+    :wheel-result-index="{value:items.length-1}"
     :base-display-indicator="true" 
     :base-size="100"
     :horizontal-content="false"
     :centered-indicator="true"
-
     :indicator-size="100"
     :indicator-position="'top'"
     :display-indicator="true"
     :display-shadow="true"
-    :easing="'bounce'"
-
+    :easing="'ease'"
     :duration="duration" 
     ref="wheel"
     :items="items"
     @click="launchWheel" 
     @wheel-end="wheelEndedCallback"
-    @wheel-start="wheelStartedCallback"
-    >
-    <template #baseContent>
+    @wheel-start="wheelStartedCallback" >
+      <template #baseContent>
       <strong>
         <label class="spin-text"><b>Spin</b></label>
       </strong>
-    </template>
-  </roulette>
+      </template>
+    </roulette>
     </div>
   </div>
 
   <div v-if="res" class="d-flex justify-content-center mt-3">
-    <div class="card">
-      <h2 v-if="res">You won {{res.name}} <span v-html="res.htmlContent"></span></h2>
-      <button @click="reset" class="btn btn-primary">Reset</button>
+    <div class="card border-success p-3 shadow-sm">
+      <h2 v-if="res" class="text-success">You won {{res.name}} <span v-html="res.htmlContent"></span></h2>
+      <button @click="reset" class="btn mt-1 btn-primary">Reset</button>
   </div>
 </div>
+</slot>
   </div>
+
 </template>
 <style>
 
