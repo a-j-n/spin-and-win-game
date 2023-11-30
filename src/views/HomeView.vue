@@ -35,10 +35,16 @@
         this.$refs.wheel.launchWheel();
       },
       wheelEndedCallback (item) {
+        console.log('wheel ended');
         console.log(item);   
         this.res = item;
+        
+        setTimeout(() => {
+          this.$refs.wheel.reset();
+          this.res = false;
+        }, 17000);
       },
-       reset(){
+      reset(){
         this.res = false;
         this.$refs.wheel.reset();
       },
@@ -58,19 +64,15 @@
 </script>
 
 <template>
-  
   <div class="container">
-    <slot>
     <div class="d-flex justify-content-center">
       <img height="180" class="mx-auto " src="logo-horizntal.webp" />
     </div>
   <div class="d-flex justify-content-center mt-5">
     <div class="">
-      <roulette class=""
+  <roulette class=""
     :size="450" 
     :base-display="true"
-    :first-item-index="{value:0}"
-    :wheel-result-index="{value:items.length-1}"
     :base-display-indicator="true" 
     :base-size="100"
     :horizontal-content="false"
@@ -80,12 +82,13 @@
     :display-indicator="true"
     :display-shadow="true"
     :easing="'ease'"
+    :result-variation="90"
     :duration="duration" 
     ref="wheel"
     :items="items"
     @click="launchWheel" 
-    @wheel-end="wheelEndedCallback"
-    @wheel-start="wheelStartedCallback" >
+    @wheel-end="wheelEndedCallback($event)"
+     >
       <template #baseContent>
       <strong>
         <label class="spin-text"><b>Spin</b></label>
@@ -101,7 +104,6 @@
       <button @click="reset" class="btn mt-1 btn-primary">Reset</button>
   </div>
 </div>
-</slot>
   </div>
 
 </template>
