@@ -8,9 +8,9 @@
         return 
         [
             { id: 1, name: this.images[0].name, htmlContent: "<img src='"+this.images[0].src+"' class='wheel-icon' /> ", textColor: "", background: this.images[0].color },
-            { id: 2, name: "Toy", htmlContent: " <img src='"+this.images[1].src+"' class='wheel-icon' /> ", textColor: "", background: this.images[1].color },
-            { id: 3, name: "Bubbles", htmlContent: " <img src='"+this.images[2].src+"' class='wheel-icon' /> ", textColor: "", background: this.images[2].color },
-            { id: 4, name: "Cherry", htmlContent: " <img src='"+this.images[3].src+"' class='wheel-icon' /> ", textColor: "", background: this.images[3].color },
+            { id: 2, name: this.images[1].name, htmlContent: " <img src='"+this.images[1].src+"' class='wheel-icon' /> ", textColor: "", background: this.images[1].color },
+            { id: 3, name: this.images[2].name, htmlContent: " <img src='"+this.images[2].src+"' class='wheel-icon' /> ", textColor: "", background: this.images[2].color },
+            { id: 4, name: this.images[3].name, htmlContent: " <img src='"+this.images[3].src+"' class='wheel-icon' /> ", textColor: "", background: this.images[3].color },
             { id: 5, name: "Option 5", htmlContent: "Option 5", textColor: "", background: this.images[0].color },
             { id: 6, name: "Option 6", htmlContent: "Option 6", textColor: "", background: this.images[1].color },
         ];
@@ -22,10 +22,15 @@
       duration:5,
       items:[],
       images : [
-      { name : 'notebook', src: 'notebook.png',color: '#c4d838',},
-      { name: 'toy',src:'toy.png',color: '#20ccc7',},
-      { name: 'toy2',src:'toy-hat.png',color: '#f1700f',},
-      { name: 'bubbles',src:'bubbles.png',color: '#e23326',},
+      { name: 'Slime',src:'slime.png',color: '#f1700f',},
+      { name: 'Bubbles',src:'bubbles.png',color: '#e23326',},
+      { name:'Squeezing',src:"Squeezing-ball.png",color:"#c4d838" },
+      { name: 'Play dough',src:'play-dough-toy.png',color: '#20ccc7',},
+
+      { name : 'Coloring & activity book', src: 'notebook.png',color: '#f1700f',},
+      {name: 'Magic spring',src:'magic-spring.png',color: '#e23326',},
+      {name:'Ice  spray',color:"#c4d838",src:"ice-spray.png"},
+      {name:'Beep',color:"#20ccc7",src:"beep.png"}
       ],
       }  
     },
@@ -38,11 +43,11 @@
         console.log('wheel ended');
         console.log(item);   
         this.res = item;
-        
-        setTimeout(() => {
-          this.$refs.wheel.reset();
-          this.res = false;
-        }, 17000);
+        this.$router.push('/'+item.name);
+        // setTimeout(() => {
+        //   this.$refs.wheel.reset();
+        //   this.res = false;
+        // }, 17000);
       },
       reset(){
         this.res = false;
@@ -56,8 +61,6 @@
       this.images.forEach((element,index) => {
         this.items.push({ id: index, name: element.name, htmlContent: "<img src='"+element.src+"' class='wheel-icon' /> ", textColor: "", background: element.color });
       });
-      this.items.push({ id: 5, name: "Option 5", htmlContent: "Option 5", textColor: "", background: this.images[0].color });
-      this.items.push({ id: 6, name: "Option 6", htmlContent: "Option 6", textColor: "", background: this.images[1].color });
     }
     
   }
